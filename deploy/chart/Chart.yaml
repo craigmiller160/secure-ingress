@@ -1,4 +1,4 @@
 apiVersion: v2
 name: secure_ingress
-type: library
+type: application
 version: 1.0.0
