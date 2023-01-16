@@ -12,6 +12,9 @@ metadata:
     {{- if .Values.backendIsHttps }}
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
     {{- end}}
+    {{- if .Values.ipWhitelist }}
+    nginx.ingress.kubernetes.io/whitelist-source-range: {{ .Values.ipWhitelist }}
+    {{- end}}
 spec:
   rules:
   {{- range $host := .Values.hosts }}

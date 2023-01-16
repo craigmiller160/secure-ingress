@@ -11,7 +11,10 @@ CertManager must be installed in the cluster and setup to work with Let's Encryp
 ```yaml
 secure_ingress:
   name: apps-https-backend-ingress
+  # Optional, defaults to false
   backendIsHttps: true
+  # Optional, defaults to allowing everything
+  ipWhitelist: 1.1.1.1/32, 2.2.2.2/16
   hosts:
     - name: apps-craigmiller160.ddns.net
       services:
